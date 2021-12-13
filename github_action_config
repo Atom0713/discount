@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "app_function": "app.app",
+        "project_name": "discount",
+        "s3_bucket": "bucket_name",
+        "manage_roles": false,
+        "role_name": "",
+        "aws_region": "eu-west-1",
+        "remote_env": "s3://<bucket_name>/github_action_dev_config.json",
+        "timeout_seconds": 30,
+        "events": [
+            {
+                "name": "reset_trial_orders",
+                "function": "discount.triggered_event.controller.reserved_codes_check",
+                "expression": "cron(0 1 ? * * *)"
+            }
+        ]
+    }
+}

@@ -3,24 +3,42 @@
 
 Billogram technical Interview task.
 
-## Setup
-1. Run MySQL Server.
-3. Create Database using **schema.sql** in the repository.
-4. Update `DATABASE_URL` environment variable in **config.json**
-
-
 ## Getting started
 
+### DB Setup
+1. Create Database using **schema.sql** in the repository.
+2. Update `DATABASE_URL` environment variable in **development_config.json**
 
-
-Intall required dependencies and run the app:
+### Intall required dependencies:
 
 ```shell
 pip install -r requirements.txt
-python app.py
 ```
 
-Visit [http://localhost:8080](http://localhost:8080)
+## Run The Application
+
+### CMD
+```
+> set FLASK_APP=app_dev
+> set FLASK_ENV=development
+> flask run
+```
+
+### BASH
+
+```
+$ export FLASK_APP=app_dev.py
+$ export FLASK_ENV=development
+$ flask run
+```
+
+### IDE
+
+Run
+```
+app_dev.py
+```
+Visit [http://localhost:5000](http://localhost:5000)
 
 ## Tests
 
@@ -32,9 +50,37 @@ pytest --cov=web/ --ignore=tests/integration tests
 ```
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables
 
-`API_KEY`
+`DATABASE_URL`
 
-`ANOTHER_API_KEY`
 
+## Endpoints
+
+```
+/discount_code/merchant/create/ [GET, POST]
+```
+`GET` `POST`Request headers:
+```
+Content-Type
+Authorization
+```
+
+`POST` Request body:
+```
+{
+    "discount_code_config": {
+        "discount_type_id": 1, 'type: int'
+        "number_of_codes": 10 'type: int'
+    }
+}
+```
+
+```
+/discount_code/user/<int:merchant_id>/ [GET]
+```
+`GET` Request headers:
+```
+Content-Type
+Authorization
+```
