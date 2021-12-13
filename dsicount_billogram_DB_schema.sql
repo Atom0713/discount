@@ -41,7 +41,7 @@ CREATE TABLE `discount` (
   CONSTRAINT `discount_ibfk_1` FOREIGN KEY (`discount_type_id`) REFERENCES `discount_type` (`discount_type_id`),
   CONSTRAINT `discount_ibfk_2` FOREIGN KEY (`merchant_id`) REFERENCES `merchant` (`merchant_id`),
   CONSTRAINT `discount_ibfk_3` FOREIGN KEY (`reserved_by`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,6 +76,7 @@ CREATE TABLE `discount_setting` (
 
 LOCK TABLES `discount_setting` WRITE;
 /*!40000 ALTER TABLE `discount_setting` DISABLE KEYS */;
+INSERT INTO `discount_setting` VALUES (1,7,12,'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 /*!40000 ALTER TABLE `discount_setting` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-13  8:18:04
+-- Dump completed on 2021-12-13  8:41:23
