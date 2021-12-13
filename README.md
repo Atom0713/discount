@@ -11,7 +11,10 @@ Billogram technical Interview task.
 
 ### DB Setup
 1. Create Database using **discount_billogram_DB_schema.sql** in the repository.
-2. Update `DATABASE_URL` environment variable in **development_config.json**
+2. Update `DATABASE_URL` environment variable in **development_config.json**. 
+```
+"DATABASE_URL": "mysql+mysqlconnector://<user_name>:<password>@localhost:3306/discount_billogram"
+```
 
 ### Intall required dependencies:
 

@@ -1,6 +1,6 @@
 {
   "environment_variables": {
-    "DATABASE_URL": "mysql+mysqlconnector://root:HackMeNoWorkbench13@localhost:3306/discount_billogram",
+    "DATABASE_URL": "mysql+mysqlconnector://<user_name>:<password>@localhost:3306/discount_billogram",
     "SECRET_KEY": "secret"
   }
 }
